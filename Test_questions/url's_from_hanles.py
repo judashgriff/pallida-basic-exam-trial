@@ -10,6 +10,8 @@
 # names = ["ghhandle1", "ghhandle2"]
 # print(urls_from_handles(names))
 
+import requests
+
 
 def make_list(githandles):
     githandles_list = []
@@ -20,7 +22,11 @@ def make_list(githandles):
 def remove_spaces(githandles_list):
     for i in githandles_list:
         if i != '' and i != ' ':
-            print("\"https://github.com/greenfox-academy/" + str(i) + "\"")
+            request = requests.get("https://github.com/greenfox-academy/" + str(i))
+            if request.status_code == 200:
+                print("\"https://github.com/greenfox-academy/" + str(i) + "\"")
+            else:
+                print('Web site does not exist') 
     return
             
 
