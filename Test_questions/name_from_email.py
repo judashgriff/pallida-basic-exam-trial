@@ -17,4 +17,5 @@ def name_print(user_input):
 
 
 user_input = input("Please provide your email address in the following format: last_name first_name. example: \"elek.viz@exam.com\" ")
+
 name_print(user_input)

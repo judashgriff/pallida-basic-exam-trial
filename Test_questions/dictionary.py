@@ -55,7 +55,5 @@ def translate_to_eng(hun_word):
 
 
 user_input = int(input("Please press \"0\" and enter if you want to add something to the dictionary, or if you want to translate press \"1\" and enter.:\n "))
+
 querry(user_input)
-
-
-

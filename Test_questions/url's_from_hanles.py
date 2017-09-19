@@ -10,12 +10,10 @@
 # names = ["ghhandle1", "ghhandle2"]
 # print(urls_from_handles(names))
 
-import requests
 
 def make_list(githandles):
     githandles_list = []
     githandles_list = githandles.split(" ")
-    print(githandles_list)
     remove_spaces(githandles_list)
 
 
@@ -26,6 +24,6 @@ def remove_spaces(githandles_list):
     return
             
 
-
 githandles = input("Which github user's URL you would like to know? Please provide their github username separated by a space!: ")
+
 make_list(githandles)
