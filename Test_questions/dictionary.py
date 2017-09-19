@@ -39,14 +39,20 @@ def add_word(hun_word, eng_word):
 
 def translate_to_hun(eng_word):
     for i in dictionary:
-        if i == eng_word:
-            print(i)
+        key = list(i.keys())[0]
+        if i[key] == eng_word:
+            print(key)
+            return
+    print("Invalid or not in dictionary. Feel free to enter new values.")
 
 
 def translate_to_eng(hun_word):
     for i in dictionary:
-        if i == hun_word:
-            print(i)
+        if hun_word == list(i.keys())[0]:
+            print(i[hun_word])
+            return
+    print("Invalid or not in dictionary. Feel free to enter new values.")
+
 
 user_input = int(input("Please press \"0\" and enter if you want to add something to the dictionary, or if you want to translate press \"1\" and enter.:\n "))
 querry(user_input)
