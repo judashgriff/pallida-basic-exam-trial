@@ -1,3 +1,6 @@
+
+'''         Dictionary          '''
+
 def query(user_input):
     if user_input == 0:
         hun = input("What is the hungarian version of the word?:\n ")
@@ -26,16 +29,6 @@ def add_word(hun_word, eng_word):
     return 
 
 
-def import_dict():
-    my_dict = { }
-    with open("dictionary.txt") as f:
-        for line in f:
-            line = line.strip()
-            words = line.split(" : ")
-            my_dict[words[0]] = words[1]
-    return my_dict
-
-
 def translate_to_hun(eng_word):
     my_dict = import_dict()
     for i in my_dict:
@@ -52,6 +45,16 @@ def translate_to_eng(hun_word):
             print(my_dict[i])
             return
     print("Invalid or not in dictionary. Feel free to enter new values.")
+
+
+def import_dict():
+    my_dict = { }
+    with open("dictionary.txt") as f:
+        for line in f:
+            line = line.strip()
+            words = line.split(" : ")
+            my_dict[words[0]] = words[1]
+    return my_dict
 
 
 user_input = int(input("Please press \"0\" and enter if you want to add something to the dictionary, or if you want to translate press \"1\" and enter.:\n "))
